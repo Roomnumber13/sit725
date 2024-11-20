@@ -2,8 +2,9 @@
   "name": "week3_task3.3",
   "version": "1.0.0",
   "description": "website",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "test"
   },
   "repository": {
