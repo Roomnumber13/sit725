@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Roomnumber13/sit725/issues"
   },
-  "homepage": "https://github.com/Roomnumber13/sit725#readme"
+  "homepage": "https://github.com/Roomnumber13/sit725#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
 }
