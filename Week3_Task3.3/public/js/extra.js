@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('.modal').modal();
     $(".change-color").on("click", function() {
-      // Change the button's background color
-      $(this).css("background-color", "#ff5722"); // Example: a reddish color
+      // Changes the background color of the button
+      $(this).css("background-color", "#ff5722");
     });
   });
