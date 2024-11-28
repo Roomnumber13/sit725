@@ -4,18 +4,18 @@ const { MongoClient } = require('mongodb');
 const app = express();
 const port = 3000;
 
-// Middleware to parse JSON bodies
+//Parsing JSON bodies
 app.use(express.json());
 
-// MongoDB connection URI and database/collection names
+//MongoDB connection URI and database/collection names
 const mongoURI = 'mongodb://localhost:27017/';
 const dbName = 'myDB';
 const collectionName = 'newCollection';
 
-// Create a new MongoClient
+//Create a new MongoClient
 const client = new MongoClient(mongoURI);
 
-// Connect to MongoDB and ensure database and collection exist
+//Connect to MongoDB and ensure database and collection exist
 async function initializeDatabase() {
     try {
         await client.connect();
@@ -40,12 +40,12 @@ async function initializeDatabase() {
 
 let collection;
 
-// Initialize the database and collection
+//Initialize the database and collection
 initializeDatabase().then((col) => {
     collection = col;
 });
 
-// API endpoint to insert data into the collection
+//API to insert data into the collection
 app.post('/insert', async (req, res) => {
     try {
         const document = req.body;
@@ -57,7 +57,7 @@ app.post('/insert', async (req, res) => {
     }
 });
 
-// API endpoint to retrieve all documents from the collection
+//API to retrieve all documents from the collection
 app.get('/documents', async (req, res) => {
     try {
         const documents = await collection.find({}).toArray();
@@ -68,7 +68,7 @@ app.get('/documents', async (req, res) => {
     }
 });
 
-// Start the Express server
+//Start the Express server
 app.listen(port,()=>{
     console.log("App listening to: "+port)
 });
